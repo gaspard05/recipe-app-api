@@ -1,0 +1,6 @@
+{
+	"python.analysis.extraPaths": [
+		"\"python.analysis.extraPaths\": [./app]"
+	],
+	"python.analysis.stubPath": "\"python.analysis.extraPaths\": [./app]"
+}
