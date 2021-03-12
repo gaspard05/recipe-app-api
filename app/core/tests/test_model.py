@@ -31,7 +31,7 @@ class ModelTest(TestCase):
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(None, 'Test12')
 
-    def test_create_new_supeuser(self):
+    def test_create_new_superuser(self):
         """Test creating new superuser"""
         user = get_user_model().objects.create_superuser(
             'test@adevlab.com',
@@ -41,9 +41,17 @@ class ModelTest(TestCase):
         self.assertTrue(user.is_staff)
 
     def test_tag_str(self):
-        """Test the tag string repreesentation"""
+        """Test the tag string representation"""
         tag = models.Tag.objects.create(
             user=sample_user(),
             name='Vegan'
         )
         self.assertEqual(str(tag), tag.name)
+
+    def test_ingredient_sgtr(self):
+        """Test the ingredient string representation"""
+        ingredient = models.Ingredient.objects.create(
+            user=sample_user(),
+            name='Cucumber'
+        )
+        self.assertEqual(str(ingredient), ingredient.name)
